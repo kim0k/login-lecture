@@ -27,7 +27,7 @@ app.set("view engine","ejs") // 어떤 엔진으로 해석할지 , 뷰 엔진으
 
 
 app.use("/", home); // use는 미들웨어를 등록하는 메소드, "/"라는 경로로 들어오면 home으로 보내준다
-
+app.use(express.static(`${__dirname}/src/public`)); // express.static를 사용하여 정적 경로 추가, 현재 디렉토리 이름(__dirname)을 가져와서 디렉토리의 /src/public 경로를 정적 경로로 추가
 //  express를 이용한 라우터
 // app.get("/", (req, res) => {  //(경로, 파라미터(request(요청), response(응답))(브라우저에게 요청과 응답을 하기 위해))
 //     res.render("home/index"); //  view로 ./views를 디렉토리로 설정 했기 떄문에 
