@@ -5,8 +5,9 @@ const router = express.Router(); // 변수에 expres.Router를 실행시켜 변�
 
 const ctrl = require("./home.ctrl"); // 현재 폴드에 있는 home.ctrl 을 불러온다 
 
-router.get("/", ctrl.home); //경로 만들기
+router.get("/", ctrl.output.home); //경로 만들기
+router.get("/login", ctrl.output.login); //경로 만들기
+router.post("/login", ctrl.process.login); //경로 만들기
 
-router.get("/login", ctrl.login); //경로 만들기
 
 module.exports = router // 라우터를 외부에서 사용할 수 있게 만듬
